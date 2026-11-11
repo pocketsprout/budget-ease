@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Budget Ease</title>
+  <meta name="description" content="Download Budget Ease — simple pocket budgeting for iPhone and Android." />
+  <meta name="robots" content="noindex" />
+  <meta property="og:title" content="Get Budget Ease" />
+  <meta property="og:description" content="Simple pocket budgeting. Offline, no account, free." />
+
+  <script>
+    // Single link for ads: send each visitor straight to the right store.
+    // Runs before the page paints, so phone users never see this page.
+    (function () {
+      var APP_STORE = 'https://apps.apple.com/app/id6774810242';
+      var PLAY_ID = 'com.pocketsprout.budgetease.beta';
+
+      var ua = navigator.userAgent || '';
+      // iPadOS 13+ reports itself as a Mac; touch support gives it away.
+      var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+        (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+      var isAndroid = /Android/i.test(ua);
+
+      // Forward utm_* params to Google Play as the install referrer,
+      // so Play Console can attribute installs to the ad campaign.
+      var play = 'https://play.google.com/store/apps/details?id=' + PLAY_ID;
+      try {
+        var params = new URLSearchParams(location.search);
+        var utm = new URLSearchParams();
+        params.forEach(function (value, key) {
+          if (key.indexOf('utm_') === 0) utm.append(key, value);
+        });
+        if (utm.toString()) play += '&referrer=' + encodeURIComponent(utm.toString());
+      } catch (e) { /* old browser: plain Play link is fine */ }
+
+      window.STORE_LINKS = { ios: APP_STORE, android: play };
+
+      if (isIOS) location.replace(APP_STORE);
+      else if (isAndroid) location.replace(play);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green: #4caf82;
+      --green-light: #6fcfa0;
+      --green-dim: #2d7a58;
+      --bg: #0e1210;
+      --bg-card: #161c18;
+      --border: rgba(76, 175, 130, 0.15);
+      --text: #e8f0eb;
+      --text-muted: #7a9485;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      padding: 2.5rem 1.5rem;
+    }
+
+    .brand {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-size: 2.4rem;
+      line-height: 1.1;
+      color: var(--green-light);
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: block;
+      padding: 0.95rem 1.5rem;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .btn-primary { background: var(--green); color: #0a0f0c; }
+    .btn-primary:hover { background: var(--green-light); }
+
+    .btn-secondary {
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--green-dim); color: var(--green-light); }
+
+    .more {
+      display: inline-block;
+      margin-top: 1.75rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .more:hover { color: var(--green-light); }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="brand">by Pocket Sprout</div>
+    <h1>Budget Ease</h1>
+    <p>Simple pocket budgeting. Offline, no account, free.</p>
+    <div class="buttons">
+      <a id="ios" class="btn btn-primary" href="https://apps.apple.com/app/id6774810242">Download on the App Store</a>
+      <a id="android" class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.pocketsprout.budgetease.beta">Get it on Google Play</a>
+    </div>
+    <a class="more" href="../">Learn more about Budget Ease</a>
+  </main>
+
+  <script>
+    // Keep the utm referrer on the visible Play button too.
+    if (window.STORE_LINKS) {
+      document.getElementById('android').href = window.STORE_LINKS.android;
+    }
+  </script>
+</body>
+</html>
