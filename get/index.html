@@ -109,24 +109,17 @@
       gap: 0.75rem;
     }
 
-    .btn {
-      display: block;
-      padding: 0.95rem 1.5rem;
-      border-radius: 100px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
-    }
+    .buttons { align-items: center; }
 
-    .btn-primary { background: var(--green); color: #0a0f0c; }
-    .btn-primary:hover { background: var(--green-light); }
-
-    .btn-secondary {
-      color: var(--text);
-      border: 1px solid var(--border);
+    .store-badge {
+      display: inline-block;
+      line-height: 0;
+      border-radius: 10px;
+      transition: transform 0.2s, opacity 0.2s;
     }
-    .btn-secondary:hover { border-color: var(--green-dim); color: var(--green-light); }
+    .store-badge img { height: 56px; width: auto; display: block; }
+    .store-badge:hover { transform: translateY(-1px); opacity: 0.9; }
+    .store-badge:focus-visible { outline: 2px solid var(--green-light); outline-offset: 3px; }
 
     .more {
       display: inline-block;
@@ -143,8 +136,8 @@
     <h1>Budget Ease</h1>
     <p>Simple pocket budgeting. Offline, no account, free.</p>
     <div class="buttons">
-      <a id="ios" class="btn btn-primary" href="https://apps.apple.com/app/id6774810242">Download on the App Store</a>
-      <a id="android" class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.pocketsprout.budgetease.beta">Get it on Google Play</a>
+      <a id="ios" class="store-badge" href="https://apps.apple.com/app/id6774810242"><img src="../assets/app-store-badge.svg" alt="Download on the App Store" /></a>
+      <a id="android" class="store-badge" href="https://play.google.com/store/apps/details?id=com.pocketsprout.budgetease.beta"><img src="../assets/google-play-badge.png" alt="Get it on Google Play" /></a>
     </div>
     <a class="more" href="../">Learn more about Budget Ease</a>
   </main>

@@ -224,6 +224,20 @@
       color: var(--green-light);
     }
 
+    /* Official store badges (unaltered artwork, same height) */
+    .store-badge {
+      display: inline-block;
+      line-height: 0;
+      border-radius: 10px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .store-badge img { height: 54px; width: auto; display: block; }
+
+    .store-badge:hover { transform: translateY(-1px); opacity: 0.9; }
+
+    .store-badge:focus-visible { outline: 2px solid var(--green-light); outline-offset: 3px; }
+
     /* ── SECTION COMMON ── */
     section {
       position: relative;
@@ -282,7 +296,7 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 1.25rem;
-      font-size: 1.3rem;
+      color: var(--green-light);
     }
 
     .feature-card h3 {
@@ -479,11 +493,11 @@
       <h1>Know exactly where your<br /><em>money goes</em></h1>
       <p class="hero-sub">Budget Ease is an offline-first envelope budgeting app. No account, no subscription — just clarity about your finances.</p>
       <div class="btn-group">
-        <a href="https://play.google.com/store/apps/details?id=com.pocketsprout.budgetease.beta" class="btn-primary" target="_blank" rel="noopener">
-          ▶ Download on Google Play
+        <a href="https://apps.apple.com/app/id6774810242" class="store-badge" target="_blank" rel="noopener">
+          <img src="assets/app-store-badge.svg" alt="Download on the App Store" />
         </a>
-        <a href="https://apps.apple.com/app/id6774810242" class="btn-secondary" target="_blank" rel="noopener">
-          🍎 Download on the App Store
+        <a href="https://play.google.com/store/apps/details?id=com.pocketsprout.budgetease.beta" class="store-badge" target="_blank" rel="noopener">
+          <img src="assets/google-play-badge.png" alt="Get it on Google Play" />
         </a>
       </div>
     </div>
@@ -497,22 +511,22 @@
 
     <div class="features-grid">
       <div class="feature-card fade-up">
-        <div class="feature-icon">💼</div>
+        <div class="feature-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg></div>
         <h3>Envelope Budgeting</h3>
         <p>Organize your money into Pockets — spending categories and savings goals — so every dollar has a purpose before you spend it.</p>
       </div>
       <div class="feature-card fade-up">
-        <div class="feature-icon">✅</div>
+        <div class="feature-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
         <h3>Safe to Spend</h3>
         <p>Your personal financial north star. Always visible on the dashboard, always up to date. Know what you can actually spend right now.</p>
       </div>
       <div class="feature-card fade-up">
-        <div class="feature-icon">📵</div>
+        <div class="feature-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h.01"/><path d="M8.5 16.429a5 5 0 0 1 7 0"/><path d="M5 12.859a10 10 0 0 1 5.17-2.69"/><path d="M19 12.859a10 10 0 0 0-2.007-1.523"/><path d="M2 8.82a15 15 0 0 1 4.177-2.643"/><path d="M22 8.82a15 15 0 0 0-11.288-3.764"/><path d="m2 2 20 20"/></svg></div>
         <h3>Offline First</h3>
         <p>No internet connection needed. No account to create. Your data lives on your device — private, fast, and always available.</p>
       </div>
       <div class="feature-card fade-up">
-        <div class="feature-icon">🌎</div>
+        <div class="feature-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></div>
         <h3>English & Spanish</h3>
         <p>Fully bilingual. Switch between English and Spanish at any time in Settings — designed for families across Latin America and beyond.</p>
       </div>
@@ -590,7 +604,8 @@
       <h3>We're here for you</h3>
       <p>Have a question, found a bug, or want to share feedback? Reach out directly — we read every message and respond as quickly as we can.</p>
       <a href="mailto:pocketsproutreach@gmail.com" class="contact-email">
-        ✉ pocketsproutreach@gmail.com
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        pocketsproutreach@gmail.com
       </a>
     </div>
   </section>
