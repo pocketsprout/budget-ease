@@ -6,8 +6,18 @@
   <title>Get Budget Ease</title>
   <meta name="description" content="Download Budget Ease — simple pocket budgeting for iPhone and Android." />
   <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0e1210" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Budget Ease" />
   <meta property="og:title" content="Get Budget Ease" />
-  <meta property="og:description" content="Simple pocket budgeting. Offline, no account, free." />
+  <meta property="og:description" content="Simple pocket budgeting for iPhone and Android. Offline, no account, free." />
+  <meta property="og:url" content="https://pocketsprout.github.io/budget-ease/get/" />
+  <meta property="og:image" content="https://pocketsprout.github.io/budget-ease/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <script>
     // Single link for ads: send each visitor straight to the right store.
@@ -81,6 +91,13 @@
       padding: 2.5rem 1.5rem;
     }
 
+    .app-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      margin-bottom: 1rem;
+    }
+
     .brand {
       font-size: 0.7rem;
       letter-spacing: 0.18em;
@@ -106,10 +123,9 @@
     .buttons {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 0.75rem;
     }
-
-    .buttons { align-items: center; }
 
     .store-badge {
       display: inline-block;
@@ -120,6 +136,27 @@
     .store-badge img { height: 56px; width: auto; display: block; }
     .store-badge:hover { transform: translateY(-1px); opacity: 0.9; }
     .store-badge:focus-visible { outline: 2px solid var(--green-light); outline-offset: 3px; }
+
+    /* QR code: only useful on a computer, so it's hidden on phones. */
+    .qr {
+      margin-top: 2rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .qr img {
+      width: 148px;
+      height: 148px;
+      border-radius: 12px;
+      display: block;
+      margin: 0 auto 0.75rem;
+    }
+
+    .qr span { font-size: 0.85rem; color: var(--text-muted); }
+
+    @media (hover: none) and (pointer: coarse) {
+      .qr { display: none; }
+    }
 
     .more {
       display: inline-block;
@@ -132,14 +169,19 @@
 </head>
 <body>
   <main class="card">
-    <div class="brand">by Pocket Sprout</div>
+    <img class="app-icon" src="../assets/icon-192.png" alt="" width="72" height="72" />
+    <div class="brand" data-i18n="brand">by Pocket Sprout</div>
     <h1>Budget Ease</h1>
-    <p>Simple pocket budgeting. Offline, no account, free.</p>
+    <p data-i18n="tagline">Simple pocket budgeting. Offline, no account, free.</p>
     <div class="buttons">
-      <a id="ios" class="store-badge" href="https://apps.apple.com/app/id6774810242"><img src="../assets/app-store-badge.svg" alt="Download on the App Store" /></a>
-      <a id="android" class="store-badge" href="https://play.google.com/store/apps/details?id=com.pocketsprout.budgetease.beta"><img src="../assets/google-play-badge.png" alt="Get it on Google Play" /></a>
+      <a id="ios" class="store-badge" href="https://apps.apple.com/app/id6774810242"><img src="../assets/app-store-badge.svg" alt="Download on the App Store" data-i18n-alt="altIos" width="168" height="56" /></a>
+      <a id="android" class="store-badge" href="https://play.google.com/store/apps/details?id=com.pocketsprout.budgetease.beta"><img id="play-badge" src="../assets/google-play-badge.png" alt="Get it on Google Play" data-i18n-alt="altAndroid" width="188" height="56" /></a>
     </div>
-    <a class="more" href="../">Learn more about Budget Ease</a>
+    <div class="qr">
+      <img src="../assets/qr-get.svg" alt="QR code linking to this page" data-i18n-alt="altQr" width="148" height="148" />
+      <span data-i18n="qr">On your computer? Scan with your phone's camera.</span>
+    </div>
+    <a id="more" class="more" href="../" data-i18n="more">Learn more about Budget Ease</a>
   </main>
 
   <script>
@@ -147,6 +189,35 @@
     if (window.STORE_LINKS) {
       document.getElementById('android').href = window.STORE_LINKS.android;
     }
+
+    // Spanish for Spanish-language browsers (or ?lang=es), English otherwise.
+    (function () {
+      var forced = new URLSearchParams(location.search).get('lang');
+      var lang = forced || (navigator.language || 'en');
+      if (lang.toLowerCase().indexOf('es') !== 0) return;
+
+      var es = {
+        brand: 'por Pocket Sprout',
+        tagline: 'Presupuesto por bolsillos, fácil. Sin internet, sin cuenta y gratis.',
+        qr: '¿No estás en el celular? Escanea el código con la cámara.',
+        more: 'Conoce más sobre Budget Ease',
+        altIos: 'Descárgalo en el App Store',
+        altAndroid: 'Disponible en Google Play',
+        altQr: 'Código QR que lleva a esta página'
+      };
+      document.documentElement.lang = 'es';
+      document.title = 'Descarga Budget Ease';
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        el.textContent = es[el.getAttribute('data-i18n')];
+      });
+      document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+        el.alt = es[el.getAttribute('data-i18n-alt')];
+      });
+      var playBadge = document.getElementById('play-badge');
+      playBadge.src = '../assets/google-play-badge-es.png';
+      playBadge.width = 188;
+      document.getElementById('more').href = '../es/';
+    })();
   </script>
 </body>
 </html>

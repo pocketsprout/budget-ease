@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- Source for assets/og-image.png and assets/og-image-es.png (1200×630 link previews).
+     Render: Chrome --headless --window-size=1200,630 --screenshot tools/og-card.html[?lang=es] -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 1200px; height: 630px; overflow: hidden; }
+    body {
+      background: #0e1210;
+      color: #e8f0eb;
+      font-family: 'DM Sans', sans-serif;
+      position: relative;
+    }
+    .glow {
+      position: absolute;
+      width: 900px; height: 900px;
+      left: 520px; top: -160px;
+      background: radial-gradient(ellipse, rgba(76, 175, 130, 0.22) 0%, transparent 62%);
+    }
+    .copy {
+      position: absolute;
+      left: 80px; top: 0; bottom: 0;
+      width: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .brand { display: flex; align-items: center; gap: 18px; margin-bottom: 40px; }
+    .brand img { width: 76px; height: 76px; border-radius: 18px; }
+    .brand .name { font-family: 'DM Serif Display', serif; font-size: 40px; color: #6fcfa0; line-height: 1; }
+    .brand .by { font-size: 15px; letter-spacing: 0.18em; text-transform: uppercase; color: #7a9485; margin-top: 6px; }
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-size: 68px;
+      line-height: 1.04;
+      margin-bottom: 28px;
+    }
+    h1 em { font-style: italic; color: #6fcfa0; }
+    .sub { font-size: 25px; font-weight: 300; color: #9fb5a8; }
+    .phone {
+      position: absolute;
+      right: 90px; top: 60px;
+      width: 330px;
+      border-radius: 44px;
+      border: 2px solid rgba(76, 175, 130, 0.35);
+      box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.9);
+      transform: rotate(4deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="copy">
+    <div class="brand">
+      <img src="../assets/icon-192.png" alt="" />
+      <div>
+        <div class="name">Budget Ease</div>
+        <div class="by" id="by">by Pocket Sprout</div>
+      </div>
+    </div>
+    <h1 id="title">Know exactly where your <em>money goes</em></h1>
+    <div class="sub" id="sub">iPhone &amp; Android · Offline · No account · Free</div>
+  </div>
+  <img class="phone" src="../assets/screens/dashboard.jpg" alt="" />
+  <script>
+    if (new URLSearchParams(location.search).get('lang') === 'es') {
+      document.getElementById('by').textContent = 'por Pocket Sprout';
+      document.getElementById('title').innerHTML = 'Sabe exactamente a dónde <em>va tu dinero</em>';
+      document.getElementById('sub').textContent = 'iPhone y Android · Sin internet · Sin cuenta · Gratis';
+    }
+  </script>
+</body>
+</html>

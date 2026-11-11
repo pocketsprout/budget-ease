@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de privacidad — Budget Ease por Pocket Sprout</title>
+  <meta name="description" content="Política de privacidad de Budget Ease, una app de finanzas personales de Pocket Sprout." />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <link rel="alternate" hreflang="en" href="https://pocketsprout.github.io/budget-ease/privacy.html" />
+  <link rel="alternate" hreflang="es" href="https://pocketsprout.github.io/budget-ease/es/privacy.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green: #4caf82;
+      --green-light: #6fcfa0;
+      --green-dim: #2d7a58;
+      --bg: #0e1210;
+      --bg-card: #161c18;
+      --border: rgba(76, 175, 130, 0.15);
+      --text: #e8f0eb;
+      --text-muted: #7a9485;
+      --text-dim: #4a6358;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-logo .app-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      color: var(--green-light);
+      line-height: 1;
+    }
+
+    .nav-logo .brand-name {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .nav-back {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--green-light); }
+
+    .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+
+    .lang-switch {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.2rem 0.65rem;
+    }
+
+    .lang-switch:hover { color: var(--green-light); border-color: var(--green-dim); }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    .page-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.8rem;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .last-updated {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.4rem;
+      color: var(--text);
+      margin: 2.5rem 0 0.75rem;
+    }
+
+    p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    ul li { margin-bottom: 0.4rem; }
+
+    .highlight-box {
+      background: rgba(76, 175, 130, 0.07);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+    }
+
+    .highlight-box p {
+      color: var(--green-light);
+      font-weight: 500;
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    a {
+      color: var(--green-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--green-dim);
+      padding-bottom: 1px;
+      transition: color 0.2s;
+    }
+
+    a:hover { color: var(--text); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    footer a {
+      color: var(--text-muted);
+      border: none;
+    }
+
+    footer a:hover { color: var(--green-light); }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .container { padding: 2.5rem 1.25rem 4rem; }
+      h1 { font-size: 2rem; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-logo">
+      <span class="app-name">Budget Ease</span>
+      <span class="brand-name">por Pocket Sprout</span>
+    </div>
+    <div class="nav-right">
+      <a href="../privacy.html" class="lang-switch" lang="en" hreflang="en">EN</a>
+      <a href="./" class="nav-back">← Volver al inicio</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <p class="page-label">Legal</p>
+    <h1>Política de privacidad</h1>
+    <p class="last-updated">Última actualización: noviembre de 2026</p>
+
+    <div class="highlight-box">
+      <p>Budget Ease no recopila, almacena ni comparte ninguna información personal. Tus datos nunca salen de tu dispositivo.</p>
+    </div>
+
+    <h2>Resumen</h2>
+    <p>Esta Política de privacidad describe cómo Pocket Sprout («nosotros») maneja la información relacionada con la aplicación móvil Budget Ease («la App»). Estamos comprometidos con proteger tu privacidad. Budget Ease está diseñada desde cero para ser una experiencia totalmente privada y que funciona sin internet.</p>
+
+    <h2>Información que no recopilamos</h2>
+    <p>Budget Ease no recopila ninguna información personal. En concreto, no recopilamos:</p>
+    <ul>
+      <li>Tu nombre, correo electrónico ni ningún dato de contacto</li>
+      <li>Datos financieros, historial de transacciones ni información de tu presupuesto</li>
+      <li>Identificadores del dispositivo ni identificadores de publicidad</li>
+      <li>Datos de ubicación</li>
+      <li>Analíticas de uso ni datos de comportamiento</li>
+      <li>Reportes de fallos ni datos de diagnóstico enviados a nuestros servidores</li>
+    </ul>
+
+    <h2>Cómo se guardan tus datos</h2>
+    <p>Todos los datos que ingresas en Budget Ease — incluidos tus bolsillos, transacciones, categorías, tarjetas de crédito y pagos de tarjeta — se guardan localmente en tu dispositivo, en su almacenamiento interno. La app nunca nos envía estos datos a nosotros ni a terceros.</p>
+    <p>Budget Ease no se conecta a tu banco ni a la entidad de tu tarjeta. Tú registras cada transacción, y la app nunca te pide claves del banco, números de tarjeta ni números de cuenta.</p>
+    <p>Si usas la copia de seguridad de tu teléfono (por ejemplo, la de iCloud o la de Google), tu teléfono puede incluir los datos de la app en esa copia. Esa copia pertenece a tu cuenta de Apple o de Google y sigue la configuración que tengas allí; nosotros no tenemos acceso a ella.</p>
+    <p>En ningún momento tenemos acceso a tus datos financieros.</p>
+
+    <h2>Notificaciones</h2>
+    <p>Si activas los recordatorios diarios, Budget Ease los programa en tu dispositivo. No interviene ningún servidor, y puedes desactivarlos cuando quieras en los Ajustes de la app o en los ajustes de tu teléfono.</p>
+
+    <h2>No necesitas una cuenta</h2>
+    <p>Budget Ease no te pide crear una cuenta ni dar información personal para usar ninguna de sus funciones. La app funciona por completo desde el momento en que la instalas.</p>
+
+    <h2>Servicios de terceros</h2>
+    <p>Budget Ease no se integra con ningún servicio de analítica, publicidad o rastreo de terceros. La app no incluye SDK de terceros que recopilen datos.</p>
+
+    <h2>Privacidad de menores</h2>
+    <p>Como Budget Ease no recopila información personal de ningún usuario, no hay riesgos especiales para la privacidad de los menores. La app es segura para usuarios de todas las edades.</p>
+
+    <h2>Cambios en esta política</h2>
+    <p>Si actualizamos esta Política de privacidad, cambiaremos la fecha de «Última actualización» al inicio de esta página. Te recomendamos revisarla de vez en cuando. Cualquier cambio se publicará aquí y, si es importante, se mencionará en las notas de versión de la app.</p>
+
+    <h2>Contáctanos</h2>
+    <p>Si tienes preguntas sobre esta Política de privacidad o sobre cómo Budget Ease maneja tus datos, escríbenos a:</p>
+    <p><a href="mailto:pocketsproutreach@gmail.com">pocketsproutreach@gmail.com</a></p>
+
+  </div>
+
+  <footer>
+    <span>© 2026 Pocket Sprout. Todos los derechos reservados.</span>
+    <a href="./">← Volver a Budget Ease</a>
+  </footer>
+
+</body>
+</html>
